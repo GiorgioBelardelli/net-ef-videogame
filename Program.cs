@@ -39,12 +39,12 @@ namespace net_ef_videogame
                             Console.Write("Inserisci lo stato della Software House: ");
                             string country = Console.ReadLine();
 
-                            //Software_House softwareHouse = new Software_House(nome, tax_id, city, country);
+                            Software_House newSoftwareHouse = new (nome, tax_id, city, country);
 
-                            SoftwareHouseManager.CreaSoftwareHouse(nome, tax_id, city, country);
+                            SoftwareHouseManager.CreaSoftwareHouse(newSoftwareHouse);
                             break;
 
-                        /*case "2":
+                        case "2":
                             Console.Write("Inserisci il nome del videogioco: ");
                             string nomeVidegioco = Console.ReadLine();
 
@@ -60,28 +60,28 @@ namespace net_ef_videogame
 
                             Videogame nuovoVideogioco = new(nomeVidegioco, overview, releaseDate, shId);
 
-                            managerVideogame.InserisciVideogioco(nuovoVideogioco);
+                            VideogameManager.CreaVideogioco(nuovoVideogioco);
                             break;
 
                         case "3":
                             Console.Write("Inserisci il codice ID del videogioco: ");
                             int videogameId = int.Parse(Console.ReadLine());
 
-                            managerVideogame.GetVideogameById(videogameId);
+                            VideogameManager.GetVideogameById(videogameId);
                             break;
 
                         case "4":
                             Console.Write("Inserisci una stringa di ricerca per il nome del videogioco: ");
                             string userSearch = Console.ReadLine();
 
-                            managerVideogame.SearchVideogamesByName(userSearch);
+                            VideogameManager.GetVideogamesByName(userSearch);
                             break;
 
                         case "5":
                             Console.Write("Inserisci il codice ID del videogioco che vuoi cancellare: ");
                             long videogameIdDelete = long.Parse(Console.ReadLine());
 
-                            managerVideogame.DeleteVideoGameById(videogameIdDelete);
+                            VideogameManager.DeleteVideogameById(videogameIdDelete);
                             break;
 
                         case "6":
@@ -90,7 +90,7 @@ namespace net_ef_videogame
                             break;
                         default:
                             Console.WriteLine("Scelta non valida. Riprova.");
-                            break;*/
+                            break;
                     }
                 }
             }
